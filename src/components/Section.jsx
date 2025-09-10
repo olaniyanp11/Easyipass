@@ -3,17 +3,24 @@ import React from "react";
 import Image from "next/image";
 import Nav from "./Nav";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Section = () => {
   return (
-    <div className="relative  w-full bg-background/10 overflow-hidden ">
+    <div className="relative w-full bg-background/10 overflow-hidden">
       {/* Navbar */}
       <Nav />
 
       {/* Hero Grid */}
       <div className="px-2 md:pl-12 lg:pl-12 grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 pt-10 font-poppins items-center max-w-7xl mx-auto">
-        {/* Left Content */}
-        <div className="space-y-6 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        
+        {/* Left Content with fade-up */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}   // start faded & moved down
+          animate={{ opacity: 1, y: 0 }}    // fade in & move up
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-6 flex flex-col justify-center items-center md:items-start text-center md:text-left"
+        >
           {/* Tagline */}
           <div className="bg-secondary text-white flex items-center p-1 px-3 md:px-5 rounded-3xl gap-2">
             <Image
@@ -21,7 +28,7 @@ const Section = () => {
               alt="Hero Icon"
               width={30}
               height={30}
-              className="w-[8px] h-[8px] md:w-[24px] md:h-[24px] lg:w-[30px] lg:h-[30px] "
+              className="w-[8px] h-[8px] md:w-[24px] md:h-[24px] lg:w-[30px] lg:h-[30px]"
             />
             <span className="text-[8px] md:text-14px lg:text-[18px] font-medium">
               No 1 Student Companion
@@ -88,11 +95,15 @@ const Section = () => {
               </div>
             </Link>
           </div>
+        </motion.div>
 
-        </div>
-
-        {/* Right Image */}
-        <div className="flex justify-center md:justify-center ">
+        {/* Right Image with fade-up too */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex justify-center md:justify-center"
+        >
           <Image
             src="/images/hero.png"
             alt="Hero Image"
@@ -102,78 +113,12 @@ const Section = () => {
           />
           <Image
             src="/images/decor.png"
-            className="absolute -z-[5] bottom-0 w-full md:w-[800px] lg:w-[800px] "
+            className="absolute -z-[5] bottom-0 w-full md:w-[800px] lg:w-[800px]"
             alt="decorative"
             width={160}
             height={160}
           />
-        </div>
-      </div>
-
-      {/* Background Overlay */}
-      <div className="bg-white/50 backdrop-blur-[500px] absolute top-0 left-0 w-full h-full -z-10"></div>
-
-      {/* background creation section*/}
-      <div className="absolute top-0 left-0 w-full h-full -z-30">
-        <Image
-          src="/images/c.png"
-          alt="Background"
-          layout="fill"
-          objectFit="contain"
-          className="w-full md:w-[500px] h-full object-cover md:object-contain absolute right-0  md:relative -z-50"
-        />
-        <div className="w-full h-full flex justify-center items-center -z-30">
-          <Image
-            src="/images/c2.png"
-            alt="Background"
-            className="w-[400px] h-[400px] object-contain -z-30"
-            width={400}
-            height={400}
-          />
-          <Image
-            src="/images/s.png"
-            alt="Background"
-            className=" object-contain -z-30 left-10 absolute"
-            width={200}
-            height={200}
-          />
-          <Image
-            src="/images/s.png"
-            alt="Background"
-            className=" object-contain -z-30 right-10 absolute"
-            width={200}
-            height={200}
-          />
-          {/* circle to be in the 4 edges of the page */}
-          <Image
-            src="/images/circle.png"
-            alt="circle"
-            width={600}
-            height={600}
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 -top-5 left-0"
-          />
-          <Image
-            src="/images/circle.png"
-            alt="circle"
-            width={600}
-            height={600}
-            className="absolute right-0  transform translate-x-1/2 -translate-y-1/2 -top-5"
-          />
-          <Image
-            src="/images/circle.png"
-            alt="circle"
-            width={600}
-            height={600}
-            className="absolute -bottom-5 transform -translate-x-1/2 translate-y-1/2 left-0"
-          />
-          <Image
-            src="/images/circle.png"
-            alt="circle"
-            width={600}
-            height={600}
-            className="absolute -bottom-5 transform translate-x-1/2 translate-y-1/2 right-0"
-          />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
