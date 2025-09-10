@@ -48,7 +48,7 @@ const Features = () => {
 
 
 
-          
+
           {Object.values(Items).map((item, index) => (
             <div
               key={index}
@@ -72,6 +72,8 @@ const Features = () => {
             </div>
           ))}
         </div>
+        <Image src="/images/circles/c1.png" alt="decorator" width={96} height={96} className="absolute bottom-7 left-6 -z-10" />
+        <Image src="/images/circles/c2.png" alt="decorator" width={96} height={96} className="absolute bottom-7 right-6 -z-10" />
       </div>
     </>
   );

@@ -44,46 +44,51 @@ const HowItWorks = () => {
       </p>
 
       {/* Content Grid */}
- <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-12 lg:px-24 pt-4 md:pt-1 font-poppins w-full mx-auto max-w-7xl">
-  {/* Left Image (but will show below text on small screens) */}
-  <div className="flex justify-center items-center order-2 md:order-1">
-    <Image
-      src="/images/hand.png"
-      alt="How It Works"
-      width={500}
-      height={500}
-      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
-    />
-  </div>
-
-  {/* Steps */}
-  <div className="flex flex-col justify-center space-y-6 order-1 md:order-2">
-    {Object.values(items).map((item, index) => (
-      <div key={index} className="flex items-start space-x-4">
-        <div
-          className={`p-3 sm:p-4 flex justify-center items-center rounded-full shrink-0 ${
-            index % 2 === 0 ? "bg-[#997A03]" : "bg-primary/70"
-          }`}
-        >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-12 lg:px-24 pt-4 md:pt-1 font-poppins w-full mx-auto max-w-7xl">
+        {/* Left Image (but will show below text on small screens) */}
+        <div className="flex justify-center items-center order-2 md:order-1">
           <Image
-            src={item.icon}
-            alt={item.title}
-            width={50}
-            height={50}
-            className="w-8 sm:w-10 h-8 sm:h-10 object-contain"
+            src="/images/hand.png"
+            alt="How It Works"
+            width={500}
+            height={500}
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
           />
         </div>
-        <div>
-          <h4 className="text-base sm:text-lg font-semibold text-secondary">
-            {item.title}
-          </h4>
-          <p className="text-text text-sm sm:text-base">{item.content}</p>
+
+        {/* Steps */}
+        <div className="flex flex-col justify-center space-y-6 order-1 md:order-2">
+          {Object.values(items).map((item, index) => (
+            <div key={index} className="flex items-start space-x-4">
+              <div
+                className={`p-3 sm:p-4 flex justify-center items-center rounded-full shrink-0 ${index % 2 === 0 ? "bg-[#997A03]" : "bg-primary/70"
+                  }`}
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={50}
+                  height={50}
+                  className="w-8 sm:w-10 h-8 sm:h-10 object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-secondary">
+                  {item.title}
+                </h4>
+                <p className="text-text text-sm sm:text-base">{item.content}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
+      {/* background decorators section */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image src="/images/biggrad.png" alt="decorator" width={150} height={150} className=" bottom-0 right-0 w-[200px] md:w-[400px] lg:w-[900px] object-contain -z-10 mx-auto mt-[50%] md:mt-[100%]" />
+        <Image src="/images/paperplane.png" alt="decorator" width={96} height={96} className="absolute top-7 left-6 -z-10 w-[45px] h-[45px]  md:w-[96px] md:h-[96px]" />
+      <Image src="/images/world.png" alt="decorator" width={96} height={96} className="absolute top-7 right-6 -z-10  w-[45px] h-[45px]  md:w-[96px] md:h-[96px]" />
+            <Image src="/images/plane.png" alt="decorator" width={96} height={96} className="absolute bottom-7 right-6 -z-10 w-[45px] h-[45px]  md:w-[96px] md:h-[96px]" />
+      </div>
     </div>
   );
 };

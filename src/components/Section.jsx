@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Section = () => {
   return (
-    <div className="relative min-h-screen w-full bg-background/10 overflow-hidden ">
+    <div className="relative  w-full bg-background/10 overflow-hidden ">
       {/* Navbar */}
       <Nav />
 
