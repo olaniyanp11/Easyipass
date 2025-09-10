@@ -11,54 +11,56 @@ const Section = () => {
       <Nav />
 
       {/* Hero Grid */}
-      <div className="pl-6 md:pl-12 lg:pl-12 grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 pt-10 font-poppins items-center max-w-7xl mx-auto">
+      <div className="px-2 md:pl-12 lg:pl-12 grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 pt-10 font-poppins items-center max-w-7xl mx-auto">
         {/* Left Content */}
         <div className="space-y-6 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Tagline */}
-          <div className="bg-secondary text-white flex items-center p-2 px-5 rounded-3xl gap-2">
+          <div className="bg-secondary text-white flex items-center p-1 px-3 md:px-5 rounded-3xl gap-2">
             <Image
               src="/images/grad.png"
               alt="Hero Icon"
               width={30}
               height={30}
-              className="w-[30px] h-[30px]"
+              className="w-[8px] h-[8px] md:w-[24px] md:h-[24px] lg:w-[30px] lg:h-[30px] "
             />
-            <span className="text-sm md:text-base lg:text-lg font-medium">
+            <span className="text-[8px] md:text-14px lg:text-[18px] font-medium">
               No 1 Student Companion
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight text-secondary">
+          <h1 className="text-[28px] md:text-[50px] lg:text-[60px] font-semibold leading-tight text-secondary">
             Your All-in-One
             <span className="text-primary"> Campus Companion</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm md:text-lg lg:text-xl text-gray-600 max-w-xl">
+          <p className="text-[12px] md:text-[25px] lg:text-[25px] text-gray-600 max-w-xl">
             From tutorials to campus events, find everything you need to make
             the most of your school life and prepare for global opportunities.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex gap-2 sm:gap-4 pt-2 flex-wrap">
             {/* Google Play */}
             <Link
               href=""
-              className="bg-secondary text-white flex items-center rounded-xl py-2 px-5 sm:px-7"
+              className="bg-secondary text-white flex items-center  rounded-xl py-2 px-3 sm:px-5"
             >
               <Image
                 src="/images/play.png"
                 alt="Play Store"
                 width={40}
                 height={40}
-                className="h-auto w-[40px]"
+                className="h-auto w-[18px] sm:w-[32px] md:w-[36px] lg:w-[40px]"
               />
               <div className="flex flex-col text-left ml-2">
-                <span className="text-xs md:text-sm">Get It On</span>
-                <h2 className="text-base md:text-lg">
-                  <span className="text-xl md:text-2xl">G</span>oogle
-                  <span className="text-xl md:text-2xl"> P</span>lay
+                <span className="text-[10px] sm:text-xs md:text-sm">Get It On</span>
+                <h2 className="text-xs sm:text-sm md:text-base lg:text-lg">
+                  <span className="text-sm sm:text-base md:text-xl lg:text-2xl">G</span>
+                  oogle
+                  <span className="text-sm sm:text-base md:text-xl lg:text-2xl"> P</span>
+                  lay
                 </h2>
               </div>
             </Link>
@@ -66,24 +68,27 @@ const Section = () => {
             {/* App Store */}
             <Link
               href=""
-              className="bg-secondary text-white flex items-center rounded-xl py-2 px-5 sm:px-7"
+              className="bg-secondary text-white flex items-center  rounded-xl py-2 px-3 sm:px-5"
             >
               <Image
                 src="/images/apple.png"
                 alt="App Store"
                 width={40}
                 height={40}
-                className="h-auto w-[40px]"
+                className="h-auto w-[18px] sm:w-[32px] md:w-[36px] lg:w-[40px]"
               />
               <div className="flex flex-col text-left ml-2">
-                <span className="text-xs md:text-sm">Get It On</span>
-                <h2 className="text-base md:text-lg">
-                  <span className="text-xl md:text-2xl">A</span>pp
-                  <span className="text-xl md:text-2xl"> S</span>tore
+                <span className="text-[10px] sm:text-xs md:text-sm">Get It On</span>
+                <h2 className="text-xs sm:text-sm md:text-base lg:text-lg">
+                  <span className="text-sm sm:text-base md:text-xl lg:text-2xl">A</span>
+                  pp
+                  <span className="text-sm sm:text-base md:text-xl lg:text-2xl"> S</span>
+                  tore
                 </h2>
               </div>
             </Link>
           </div>
+
         </div>
 
         {/* Right Image */}
@@ -93,11 +98,11 @@ const Section = () => {
             alt="Hero Image"
             width={500}
             height={400}
-            className="w-full max-w-sm md:max-w-md  lg:max-w-lg h-auto object-contain"
+            className="w-[200px] md:w-[500px] lg:w-[600px] h-auto object-contain"
           />
           <Image
             src="/images/decor.png"
-            className="absolute -z-[5] bottom-0 w-full md:w-[800px]"
+            className="absolute -z-[5] bottom-0 w-full md:w-[800px] lg:w-[800px] "
             alt="decorative"
             width={160}
             height={160}
@@ -115,7 +120,7 @@ const Section = () => {
           alt="Background"
           layout="fill"
           objectFit="contain"
-          className="w-full h-full object-contain -z-50"
+          className="w-full md:w-[500px] h-full object-cover md:object-contain absolute right-0  md:relative -z-50"
         />
         <div className="w-full h-full flex justify-center items-center -z-30">
           <Image

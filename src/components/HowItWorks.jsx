@@ -30,7 +30,7 @@ const items = {
 
 const HowItWorks = () => {
   return (
-    <div className="bg-white pt-10 relative z-10">
+    <div className="bg-white pt-10 relative z-10" id="how-it-works">
       {/* Background overlay */}
       <div className="bg-primary/10 absolute w-full min-h-screen -z-10 top-0 inset-0"></div>
 
@@ -44,45 +44,46 @@ const HowItWorks = () => {
       </p>
 
       {/* Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-12 lg:px-24 pt-10 font-poppins w-full mx-auto max-w-7xl">
-        {/* Left Image */}
-        <div className="flex justify-center items-center">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-12 lg:px-24 pt-4 md:pt-1 font-poppins w-full mx-auto max-w-7xl">
+  {/* Left Image (but will show below text on small screens) */}
+  <div className="flex justify-center items-center order-2 md:order-1">
+    <Image
+      src="/images/hand.png"
+      alt="How It Works"
+      width={500}
+      height={500}
+      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+    />
+  </div>
+
+  {/* Steps */}
+  <div className="flex flex-col justify-center space-y-6 order-1 md:order-2">
+    {Object.values(items).map((item, index) => (
+      <div key={index} className="flex items-start space-x-4">
+        <div
+          className={`p-3 sm:p-4 flex justify-center items-center rounded-full shrink-0 ${
+            index % 2 === 0 ? "bg-[#997A03]" : "bg-primary/70"
+          }`}
+        >
           <Image
-            src="/images/hand.png"
-            alt="How It Works"
-            width={500}
-            height={500}
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+            src={item.icon}
+            alt={item.title}
+            width={50}
+            height={50}
+            className="w-8 sm:w-10 h-8 sm:h-10 object-contain"
           />
         </div>
-
-        {/* Steps */}
-        <div className="flex flex-col justify-center space-y-6">
-          {Object.values(items).map((item, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div
-                className={`p-3 sm:p-4 flex justify-center items-center rounded-full shrink-0 ${
-                  index % 2 === 0 ? "bg-[#997A03]" : "bg-primary/70"
-                }`}
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={50}
-                  height={50}
-                  className="w-8 sm:w-10 h-8 sm:h-10 object-contain"
-                />
-              </div>
-              <div>
-                <h4 className="text-base sm:text-lg font-semibold text-secondary">
-                  {item.title}
-                </h4>
-                <p className="text-text text-sm sm:text-base">{item.content}</p>
-              </div>
-            </div>
-          ))}
+        <div>
+          <h4 className="text-base sm:text-lg font-semibold text-secondary">
+            {item.title}
+          </h4>
+          <p className="text-text text-sm sm:text-base">{item.content}</p>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Items = {
 const Features = () => {
   return (
     <>
-      <div className="bg-white py-10 relative z-10">
+      <div className="bg-white py-10 relative z-10" id="features">
         <div className="bg-primary/3 absolute w-full min-h-screen -z-10 top-0 inset-0"></div>
         <div className=" text-center text-secondary text-[36px] font-semibold pt-5">
           {" "}
@@ -44,7 +44,7 @@ const Features = () => {
           Discover how one app helps you study smarter, enjoy campus life, and
           even earn while you learn.{" "}
         </p>
-        <div className="px-14 gap-[50px] space-x-20 grid md:grid-cols-3 grid-cols-1 p-4  font-poppins  w-full mx-auto">
+        <div className="px-6 sm:px-14 gap-[50px] space-x-20 grid md:grid-cols-3 grid-cols-1 p-4  font-poppins  w-full mx-auto">
 
 
 

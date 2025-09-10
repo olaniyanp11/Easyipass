@@ -48,11 +48,11 @@ const Faq = () => {
   };
 
   return (
-    <div className="bg-white py-10 relative z-10">
-      <div className="text-center text-secondary text-[36px] font-semibold pt-5">
+    <div className="bg-white py-10 relative z-10" id="faq">
+      <div className="text-center text-secondary text-[20px] md:text-[24px] lg:text-[36px] font-semibold pt-5">
         Frequently Asked Questions
       </div>
-      <p className="text-center text-text px-4 md:px-20 lg:px-60 text-[24px] pb-4">
+      <p className="text-center text-text px-4 md:px-[18px] lg:px-[24px] text-[12px] pb-4">
         Get immediate answers to some of your most pressing questions.
       </p>
 
@@ -65,13 +65,13 @@ const Faq = () => {
             className="border border-primary/30 py-4 px-4 mb-4 rounded-lg cursor-pointer hover:shadow-lg hover:border-secondary/50 transition-all duration-300"
           >
             <div className="flex justify-between items-center">
-              <h4 className="text-[24px] font-semibold">{item.question}</h4>
+              <h4 className="text-[14px] md:text-[14px] lg:text-[24px]  font-semibold">{item.question}</h4>
               <Image
                 src="/images/down.png"
                 alt="down"
                 width={20}
                 height={20}
-                className={`transition-transform duration-500 transform-gpu ${
+                className={`transition-transform duration-500 transform-gpu w-[14px] md:w-[20px] lg:w-[30px] ${
                   openIndex === index
                     ? "rotate-x-180"
                     : "[transform:rotateX(180deg)]"
@@ -80,7 +80,7 @@ const Faq = () => {
             </div>
 
             {openIndex === index && (
-              <p className="text-text pt-6 text-[22px]">{item.answer}</p>
+              <p className="text-text pt-6 text-[13px] md:text-[13px] lg:text-[22px]  ">{item.answer}</p>
             )}
           </div>
         ))}
