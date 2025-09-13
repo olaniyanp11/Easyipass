@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Download = () => {
   return (
     <section
-      className="w-full min-h-screen relative flex items-center justify-center"
+      className="w-full py-16 md:py-28 lg:py-36 relative flex items-center justify-center"
       style={{
         backgroundImage: "url('/images/people.png')",
         backgroundSize: "cover",
