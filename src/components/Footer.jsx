@@ -10,8 +10,9 @@ const QuickLinks = [
 
 const AboutLinks = [
   { name: "About Us", href: "/about" },
-  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Privacy Policy", href: "/privacyPolicy" },
   { name: "Terms of Service", href: "/terms-of-service" },
+  { name: "Disclaimer", href: "/disclaimer" },
   { name: "Contact", href: "/contact" },
 ];
 
