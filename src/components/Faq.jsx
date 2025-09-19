@@ -51,7 +51,7 @@ const Faq = () => {
 
   return (
     <div
-      className="bg-gray-100 py-32 md:py-36 relative z-10 grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10 lg:px-24 gap-10"
+      className="bg-gray-100 py-20 md:py-28 relative z-10 grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10 lg:px-24 gap-10"
       id="faq"
     >
       {/* Left side */}
@@ -62,6 +62,7 @@ const Faq = () => {
         <p className="text-left text-text text-[13px] md:text-[16px] lg:text-[18px] font-normal mt-3 mb-10">
           Get immediate answers to some of your most pressing questions.
         </p>
+
         {/* Info cards */}
         <div className="flex flex-col gap-6">
           <div className="flex gap-3">
@@ -76,20 +77,20 @@ const Faq = () => {
               </p>
             </div>
           </div>
-          <div className=" py-7 w-full mx-auto mb-10 flex justify-between items-start gap-3">
-            {" "}
-            <FaClock className="text-text inline-block mr-2 w-[80px] h-[80px]" />{" "}
-            <div className="">
-              {" "}
-              <h1 className=""> 24/7 Support</h1>{" "}
-              <p className="text-gray-400 text-[11px] md:text-[13px] lg:text-[15px] mt-2 mb-0">
-                {" "}
-                Quis autem repreh enderit in velit esse nihil molestiae vel
-                illum dolorem fugiat voluptas nulla pariatur.{" "}
-              </p>{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+
+          <div className="flex gap-3">
+            <FaClock className="text-text w-12 h-12 md:w-16 md:h-16" />
+            <div>
+              <h3 className="font-semibold text-[15px] md:text-[18px]">
+                Fast Response
+              </h3>
+              <p className="text-gray-400 text-[12px] md:text-[14px] mt-1">
+                Quis autem reprehenderit in velit esse nihil molestiae vel illum
+                dolorem fugiat voluptas nulla pariatur.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* FAQ list */}
