@@ -113,7 +113,7 @@ const Section = () => {
           />
           <Image
             src="/images/decor.png"
-            className="absolute -z-[5] bottom-0 w-full md:w-[800px] lg:w-[800px]"
+            className="absolute -z-[5] bottom-0 w-full md:w-[800px] lg:w-[800px] mb-[-80px] md:mb-[-120px] lg:mb-[-150px] "
             alt="decorative"
             width={160}
             height={160}
