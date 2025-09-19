@@ -51,8 +51,8 @@ const cardVariant = {
 
 const Features = () => {
   return (
-    <div className="bg-white py-10 relative z-10" id="features">
-      <div className="bg-primary/3 absolute w-full min-h-screen -z-10 top-0 inset-0"></div>
+    <div className="bg-white py-36 relative z-10" id="features" >
+    <div className="bg-primary/3 absolute w-full min-h-screen -z-10 top-0 inset-0"></div>
 
       <motion.div
         initial="hidden"
@@ -78,7 +78,7 @@ const Features = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="px-6 sm:px-14 gap-[50px] space-x-20 grid md:grid-cols-3 grid-cols-1 p-4 font-poppins w-full mx-auto"
+        className="px-6 sm:px-14 gap-[50px] space-x-20 grid md:grid-cols-3 grid-cols-1 p-4 font-poppins w-[80%] mx-auto"
       >
         {Object.values(Items).map((item, index) => (
           <motion.div

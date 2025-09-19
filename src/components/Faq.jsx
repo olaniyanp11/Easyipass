@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { FaPlus, FaMinus, FaClock, FaFastForward } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Questions = [
   {
@@ -48,40 +50,81 @@ const Faq = () => {
   };
 
   return (
-    <div className="bg-white py-10 relative z-10" id="faq">
-      <div className="text-center text-secondary text-[20px] md:text-[24px] lg:text-[36px] font-semibold pt-5">
-        Frequently Asked Questions
+    <div
+      className="bg-gray-100 py-20 md:py-28 relative z-10 grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10 lg:px-24 gap-10"
+      id="faq"
+    >
+      {/* Left side */}
+      <div>
+        <h2 className="text-left text-secondary text-[22px] md:text-[30px] lg:text-[50px] font-semibold pt-5">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-left text-text text-[13px] md:text-[16px] lg:text-[18px] font-normal mt-3 mb-10">
+          Get immediate answers to some of your most pressing questions.
+        </p>
+        {/* Info cards */}
+        <div className="flex flex-col gap-6">
+          <div className="flex gap-3">
+            <FaFastForward className="text-text w-12 h-12 md:w-16 md:h-16" />
+            <div>
+              <h3 className="font-semibold text-[15px] md:text-[18px]">
+                24/7 Support
+              </h3>
+              <p className="text-gray-400 text-[12px] md:text-[14px] mt-1">
+                Quis autem reprehenderit in velit esse nihil molestiae vel illum
+                dolorem fugiat voluptas nulla pariatur.
+              </p>
+            </div>
+          </div>
+          <div className=" py-7 w-full mx-auto mb-10 flex justify-between items-start gap-3">
+            {" "}
+            <FaClock className="text-text inline-block mr-2 w-[80px] h-[80px]" />{" "}
+            <div className="">
+              {" "}
+              <h1 className=""> 24/7 Support</h1>{" "}
+              <p className="text-gray-400 text-[11px] md:text-[13px] lg:text-[15px] mt-2 mb-0">
+                {" "}
+                Quis autem repreh enderit in velit esse nihil molestiae vel
+                illum dolorem fugiat voluptas nulla pariatur.{" "}
+              </p>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
-      <p className="text-center text-text px-4 md:px-[18px] lg:px-[24px] text-[12px] pb-4">
-        Get immediate answers to some of your most pressing questions.
-      </p>
 
       {/* FAQ list */}
-      <div className="px-4 md:px-14 lg:px-40 w-full mx-auto">
+      <div className="px-4 md:px-8 lg:px-10 bg-white shadow-md py-7 w-full mx-auto rounded-xl">
         {Questions.map((item, index) => (
           <div
             key={index}
             onClick={() => toggleFaq(index)}
-            className="border border-primary/30 py-4 px-4 mb-4 rounded-lg cursor-pointer hover:shadow-lg hover:border-secondary/50 transition-all duration-300"
+            className="border-b border-gray-200 cursor-pointer py-4 px-2 transition-all duration-200"
           >
             <div className="flex justify-between items-center">
-              <h4 className="text-[14px] md:text-[14px] lg:text-[24px]  font-semibold">{item.question}</h4>
-              <Image
-                src="/images/down.png"
-                alt="down"
-                width={20}
-                height={20}
-                className={`transition-transform duration-500 transform-gpu w-[14px] md:w-[20px] lg:w-[30px] ${
-                  openIndex === index
-                    ? "rotate-x-180"
-                    : "[transform:rotateX(180deg)]"
-                }`}
-              />
+              <h4 className="text-[14px] md:text-[16px] lg:text-[20px] font-semibold">
+                {item.question}
+              </h4>
+              {index === openIndex ? (
+                <FaMinus className="text-text" />
+              ) : (
+                <FaPlus className="text-text" />
+              )}
             </div>
 
-            {openIndex === index && (
-              <p className="text-text pt-6 text-[13px] md:text-[13px] lg:text-[22px]  ">{item.answer}</p>
-            )}
+            {/* Subtle animated answer */}
+            <AnimatePresence>
+              {openIndex === index && (
+                <motion.p
+                  className="text-gray-500 pt-3 text-[13px] md:text-[15px] lg:text-[17px]"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  {item.answer}
+                </motion.p>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>

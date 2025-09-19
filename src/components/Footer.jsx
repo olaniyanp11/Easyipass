@@ -35,11 +35,11 @@ const socials = [
 const Footer = () => {
   return (
     <footer className="bg-[#212073] text-white">
-      <div className="grid grid-cols-1 md:flex md:justify-between gap-6 px-5 md:px-16 py-16 text-white items-start">
+      <div className="grid grid-cols-1 md:flex md:justify-between gap-6 px-5 md:px-16 py-16 text-white items-start w-[90%] mx-auto">
         {/* Logo + About */}
         <div className="space-y-4 flex flex-col items-start max-w-lg">
           <Image src="/images/logo.png" alt="Logo" width={150} height={50} />
-          <p className="mt-4 text-[9px] sm:text-[12px] md:text-[20px] leading-relaxed text-justify">
+          <p className="mt-4 text-[9px] sm:text-[12px] md:text-[20px] leading-relaxed text-left  leading-snug pb-8">
             Your trusted partner in education, bringing together campus
             navigation, tutorials, events, and study abroad into one accessible
             platform.
@@ -73,7 +73,7 @@ const Footer = () => {
               {QuickLinks.map((link, index) => (
                 <li
                   key={index}
-                  className="hover:text-text transition-colors text-[9px] sm:text-[12px] md:text-[20px]"
+                  className="hover:text-text py-2 transition-colors text-[9px] sm:text-[12px] md:text-[20px]"
                 >
                   <Link href={link.href}>{link.name}</Link>
                 </li>
@@ -90,7 +90,7 @@ const Footer = () => {
               {AboutLinks.map((link, index) => (
                 <li
                   key={index}
-                  className="hover:text-text transition-colors text-[9px] sm:text-[12px] md:text-[20px]"
+                  className="hover:text-text transition-colors text-[9px] sm:text-[12px] md:text-[20px] py-2"
                 >
                   <Link href={link.href}>{link.name}</Link>
                 </li>

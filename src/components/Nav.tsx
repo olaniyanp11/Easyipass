@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="py-4 px-6 md:px-12 flex justify-between items-center font-poppins relative md:bg-transparent bg-[#CAC6E9]">
+      <nav className="py-4 px-6 md:px-12 flex justify-between items-center font-poppins relative md:bg-transparent bg-[#CAC6E9] lg:w-[90%] mx-auto">
         {/* Logo */}
         <div>
           <Image src="/images/logo.png" alt="Logo" width={150} height={50} />

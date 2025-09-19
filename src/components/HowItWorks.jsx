@@ -47,7 +47,7 @@ const stepVariants = {
 
 const HowItWorks = () => {
   return (
-    <div className="bg-white pt-10 relative z-10" id="how-it-works">
+    <div className="bg-white pt-36 relative z-10" id="how-it-works">
       <div className="bg-primary/10 absolute w-full min-h-screen -z-10 top-0 inset-0"></div>
 
       {/* Heading */}
