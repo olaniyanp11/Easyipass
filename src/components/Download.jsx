@@ -8,7 +8,7 @@ const Download = () => {
   return (
     <section
       id="download"
-      className="relative flex items-center justify-center w-full py-12 sm:py-16 md:py-28 lg:py-36"
+      className="relative flex items-center justify-center w-full py-12 sm:py-24 md:py-28 lg:py-36"
       style={{
         backgroundImage: "url('/images/people.png')",
         backgroundSize: "cover",

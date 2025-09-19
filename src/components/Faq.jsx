@@ -51,7 +51,7 @@ const Faq = () => {
 
   return (
     <div
-      className="bg-gray-100 py-20 md:py-28 relative z-10 grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10 lg:px-24 gap-10"
+      className="bg-gray-100 py-32 md:py-36 relative z-10 grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10 lg:px-24 gap-10"
       id="faq"
     >
       {/* Left side */}
